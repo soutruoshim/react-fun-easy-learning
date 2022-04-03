@@ -1,48 +1,39 @@
 import React from "react";
 class App extends React.Component {
- state = {
-   email: "",
-   password: "",
-   emailError:'',
-   passwordError:''
- }
-
-
- validate(){
-   if(true){
-
-   }else if(true){
-
-   }
- }
- formSubmit = (e) => {
-   e.preventDefault();
-   if(this.validate()){
-     alert("Form Submit is Done.");
-   }
- }
- 
- render() {
-   return (
-     <div className="App">
-       <h1>Email: {this.state.email}</h1>
-       <h1>Password: {this.state.password}</h1>
-       <div>
-         <form onSubmit={this.formSubmit}>
-           <div class="form-group" style={{ marginLeft: 200 }}>
-             <label>Email: </label><br></br>
-             <input type="text" name="email" onChange={(e) => { this.setState({ email: e.target.value }) }}></input><br></br>
-             <strong style={{color: 'red'}}>Email and Password Invalid</strong><br></br>
-             <label>Password: </label><br></br>
-             <input type="text" name="password" onChange={(e) => { this.setState({ password: e.target.value }) }}></input><br></br>
-             <strong style={{color: 'red'}}>Email and Password Invalid</strong><br></br>
-             <button type="submit">Submit</button>
-           </div>
-         </form>
-       </div>
-     </div>
-   )
- }
+  render() {
+    const names = [
+      {
+        name: "Sout",
+        age: 29,
+        grade: 3.5,
+      },
+      {
+        name: "Rahim",
+        age: 30,
+        grade: 4.5,
+      },
+      {
+        name: "Khan",
+        age: 28,
+        grade: 3.6,
+      },
+    ];
+    const items = names.map((item, idx) => {
+      return (
+        <li key={idx}>
+          {" "}
+          Name: {item.name}, Age: {item.age}, Grade: {item.grade}
+          <button>Edit</button>
+          <button>Delete</button>
+        </li>
+      );
+    });
+    return (
+      <div className="App">
+        <h1>Student List</h1>
+        {items}
+      </div>
+    );
+  }
 }
 export default App;
-
