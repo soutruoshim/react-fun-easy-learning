@@ -7,6 +7,7 @@ import About from "./components/about";
 import Contact from "./components/contact";
 import Blog from "./components/blog";
 import Profile from "./components/profile";
+import WritePost from "./components/writepost";
 
 export default class Header extends Component {
   render() {
@@ -51,6 +52,9 @@ export default class Header extends Component {
           </Route>
           <Route path="/blog">
             <Blog />
+          </Route>
+          <Route path="/writepost">
+            <WritePost />
           </Route>
           <Route path="/profile">
             <Profile />
