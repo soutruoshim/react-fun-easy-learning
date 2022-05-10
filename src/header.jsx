@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import App from "./App";
 import About from "./components/about";
 import Contact from "./components/contact";
@@ -17,7 +17,7 @@ export default class Header extends Component {
           <Navbar bg="light" expand="lg">
             <Container fluid>
               <Navbar.Brand>
-                <Link to="/">SrhDP</Link>
+                <NavLink exact activeStyle={{color:'orange'}} to="/">SrhDP</NavLink>
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
@@ -27,16 +27,16 @@ export default class Header extends Component {
                   navbarScroll
                 >
                   <Nav.Link>
-                    <Link to="/about">About Us</Link>
+                    <NavLink activeStyle={{color:'orange'}} to="/about">About Us</NavLink>
                   </Nav.Link>
                   <Nav.Link>
-                    <Link to="/contact">Contact Us</Link>
+                    <NavLink activeStyle={{color:'orange'}} to="/contact">Contact Us</NavLink>
                   </Nav.Link>
                   <Nav.Link>
-                    <Link to="/blog">Blog</Link>
+                    <NavLink activeStyle={{color:'orange'}} to="/blog">Blog</NavLink>
                   </Nav.Link>
                   <Nav.Link>
-                    <Link to="/profile">Profile</Link>
+                    <NavLink activeStyle={{color:'orange'}} to="/profile">Profile</NavLink>
                   </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
